@@ -6,7 +6,7 @@ import java.util.Comparator;
 
 import java.util.StringTokenizer;
 
-public class Main_BOJ_4386_별자리만들기 {
+public class Main_BOJ_4386_별자리만들기_G4_김인태_108ms {
 
 	static class Star{
 		int idx;

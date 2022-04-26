@@ -7,7 +7,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
-public class Main_BOJ_17142_연구소3_김인태 {
+public class Main_BOJ_17142_연구소3_G4_김인태_212ms {
 
 	static class Virus{
 		int x;
