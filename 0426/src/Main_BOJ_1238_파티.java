@@ -8,8 +8,6 @@ public class Main_BOJ_1238_파티 {
 
 	private static int N, M, X;
 	private static int[][] map;
-	static int[] d, rd;
-	static boolean[] v;
 	static final int INF = 987_654_321;
 
 	public static void main(String[] args) throws IOException {
@@ -23,9 +21,9 @@ public class Main_BOJ_1238_파티 {
 		map = new int[N+1][N+1];
 
 		
-		d = new int[N+1];
-		rd = new int [N+1];
-		v = new boolean[N+1];
+		int[] d = new int[N+1];
+		int[] rd = new int [N+1];
+		boolean[] v = new boolean[N+1];
 		
 		for(int i=0; i<M; i++) {
 			st = new StringTokenizer(br.readLine());
@@ -34,26 +32,25 @@ public class Main_BOJ_1238_파티 {
 			int weight = Integer.parseInt(st.nextToken());
 			map[from][to] = weight;
 		}
+		
 		int ans=Integer.MIN_VALUE;
-		
-		
-		dijk(rd, X);
+		dijk(v, rd, X);
 		
 		for(int i=1; i<=N; i++) {
 			int res = 0;
-			dijk(d, i);
+			dijk(v, d, i);
 			res = d[X] + rd[i];
-			System.out.println(Arrays.toString(d));
-			System.out.println(Arrays.toString(rd));
-			System.out.println(res);
-			System.out.println("----------------------");
+//			System.out.println(Arrays.toString(d));
+//			System.out.println(Arrays.toString(rd));
+//			System.out.println(res);
+//			System.out.println("----------------------");
 			if(ans<res) ans = res;
 		}
 		System.out.println(ans);
 	}
 	
 	
-	public static void dijk(int[] arr, int start) {
+	public static void dijk(boolean[] v, int[] arr, int start) {
 		Arrays.fill(arr, INF);
 		Arrays.fill(v, false);
 		arr[start] = 0;
