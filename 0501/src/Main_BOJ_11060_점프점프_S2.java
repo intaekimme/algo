@@ -19,13 +19,20 @@ public class Main_BOJ_11060_점프점프_S2 {
 		for(int i=1; i<=N; i++) {
 			arr[i] = Integer.parseInt(st.nextToken());
 		}
-		dp = new int[1101];
+		
+		dp = new int[14];
+		System.out.println(Arrays.toString(dp));
 		Arrays.fill(dp, Integer.MAX_VALUE);
 		dp[1] = 0;
+		System.out.println(Arrays.toString(dp));
+		System.out.println("===========");
         for (int i = 1; i <= N; i++) {
+        	System.out.println(Arrays.toString(dp));
             if (dp[i] >= Integer.MAX_VALUE) continue;
             for (int j = 1; j <= arr[i]; j++) {
                 dp[i+j] = Math.min(dp[i+j], dp[i]+1);
+                System.out.println(Arrays.toString(dp));
+                System.out.println("-----------------");
             }
         }
         if (dp[N] >= Integer.MAX_VALUE) {
