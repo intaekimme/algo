@@ -4,9 +4,7 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 public class Main_BOJ_1085_직사각형에서탈출_B3 {
-
-
-
+	
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		
