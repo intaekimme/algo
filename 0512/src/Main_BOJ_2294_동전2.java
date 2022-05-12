@@ -20,27 +20,17 @@ public class Main_BOJ_2294_동전2 {
 		arr = new int[N+1];
 		dp = new int[K+1];
 		Arrays.fill(dp, INF);
+		dp[0]=0;
 		for(int i=1; i<=N; i++) {
 			arr[i] = Integer.parseInt(br.readLine());
-			if(arr[i]<=10_000)
-				dp[arr[i]] = 1;
-		}
-		
-		Arrays.sort(arr);
-		
-		for(int i=1; i<=K; i++) {
-			for(int j=N-1; j>0; j--) {
-				if(i % arr[j]==0) {
-					dp[i] = i / arr[j];
-					break;
-				}
-			}
-			if(dp[i] == INF) {
-				dp[i] = Math.min(dp[i], dp[i-1]+1);
+			
+			for(int j=arr[i]; j<=K; j++) {
+				dp[j] = Math.min(dp[j], dp[j-arr[i]]+1);
 			}
 		}
+		
 //		System.out.println(Arrays.toString(dp));
-		System.out.println(dp[K-1] != INF ? dp[K-1] : "-1");
+		System.out.println(dp[K] != INF ? dp[K] : "-1");
 	}
 
 }
