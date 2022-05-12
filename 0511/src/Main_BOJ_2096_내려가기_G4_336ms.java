@@ -4,7 +4,7 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 
-public class Main_BOJ_2096_내려가기_G4_ {
+public class Main_BOJ_2096_내려가기_G4_336ms {
 
 	private static int N;
 	private static int[][] arr, maxDp, minDp;
@@ -13,9 +13,9 @@ public class Main_BOJ_2096_내려가기_G4_ {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		
 		N = Integer.parseInt(br.readLine());
-		arr = new int[N][N];
-		maxDp = new int[N][N];
-		minDp = new int[N][N];
+		arr = new int[N][3];
+		maxDp = new int[N][3];
+		minDp = new int[N][3];
 		
 		StringTokenizer st = null;
 		for(int i=0; i<N; i++) {
