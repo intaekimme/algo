@@ -108,30 +108,27 @@ public class CompleteBinaryTree {
 		//	현재 노드 방문
 		System.out.print(nodes[current]+" ");
 		//	현재노드의 자식노드들 방문
-		
 		dfsByPreOrder(current*2);
 		dfsByPreOrder(current*2+1);
 	}
 	
 	private void dfsByInOrder(int current) {
 		if(current>lastIndex)	return;
+		//	현재노드의 자식노드들 방문		
+		dfsByInOrder(current*2);
 		//	현재 노드 방문
 		System.out.print(nodes[current]+" ");
-		//	현재노드의 자식노드들 방문
-		
-		dfsByInOrder(current*2);
 		dfsByInOrder(current*2+1);
 	}
 	
 	
 	private void dfsByPostOrder(int current) {
 		if(current>lastIndex)	return;
-		//	현재 노드 방문
-		System.out.print(nodes[current]+" ");
 		//	현재노드의 자식노드들 방문
-		
 		dfsByPostOrder(current*2);
 		dfsByPostOrder(current*2+1);
+		//	현재 노드 방문
+		System.out.print(nodes[current]+" ");
 	}
 	
 	

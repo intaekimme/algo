@@ -34,9 +34,9 @@ public class Main_BOJ_11660_구간합구하기5 {
 				dp[i][j] = dp[i][j-1] + dp[i-1][j] - dp[i-1][j-1] + map[i][j];
 			}
 		}
-		for(int i=0; i<=N; i++) {
-			System.out.println(Arrays.toString(dp[i]));
-		}
+//		for(int i=0; i<=N; i++) {
+//			System.out.println(Arrays.toString(dp[i]));
+//		}
 		StringBuilder sb = new StringBuilder();
 		for(int i=0; i<M; i++) {
 			st = new StringTokenizer(br.readLine());
