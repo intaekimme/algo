@@ -19,16 +19,6 @@ public class Main_BOJ_1755_숫자놀이_ {
 		
 		N = Integer.parseInt(st.nextToken());
 		M = Integer.parseInt(st.nextToken());
-//		
-//		String[] arr = {"one", "two", "three", "four", "five", 
-//				"six", "seven", "eight", "nine", "zero"};
-//		
-//		Arrays.sort(arr);
-//		
-//		
-//		for(int i=0; i<arr.length; i++) {
-//			System.out.println(arr[i]);
-//		}
 		
 		Map<Integer, String> map = new HashMap<Integer, String>();
 		map.put(1, "one");
@@ -53,7 +43,6 @@ public class Main_BOJ_1755_숫자놀이_ {
 		map2.put("eight", 8);
 		map2.put("nine", 9);
 		map2.put("zero", 0);
-		
 		
 		
 		ArrayList<String> arr = new ArrayList<String>();
