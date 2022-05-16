@@ -1,6 +1,7 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 
 
 public class Main_BOJ_12852_1로만들기2 {
@@ -28,7 +29,7 @@ public class Main_BOJ_12852_1로만들기2 {
 			}
 			table[i] = min;
 		}
-//		System.out.println(Arrays.toString(table));
+		System.out.println(Arrays.toString(table));
 		
 		StringBuilder sb = new StringBuilder();
 		sb.append(table[n]).append("\n");
