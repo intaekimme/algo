@@ -1,10 +1,15 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Arrays;
 import java.util.Comparator;
 import java.util.PriorityQueue;
 import java.util.StringTokenizer;
+
+/**
+ * https://source-sc.tistory.com/59
+ * @author kit938639
+ *
+ */
 
 public class Main_BOJ_1931_회의실배정_S1 {
 
