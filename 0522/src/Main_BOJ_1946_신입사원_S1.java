@@ -22,22 +22,18 @@ public class Main_BOJ_1946_신입사원_S1 {
 				arr[i][1] = Integer.parseInt(st.nextToken());
 			}
 			Arrays.sort(arr, (int[] o1, int []o2) -> o1[0] - o2[0]);
-//			for(int i=0;i<N; i++) {
-//				System.out.println(Arrays.toString(arr[i]));
-//			}
-			// 시간 초과
-			int cnt = 0;
-			for(int i=N-1; i>0; i--) {
-				if(arr[i][1] == 1) continue;
-				for(int j=i-1; j>=0; j--) {
-					if(arr[i][1]>arr[j][1]) {
-						cnt++;
-						break;
-					}
+			
+			int cnt = 1;
+			
+			int val = arr[0][1];
+			for(int i=1; i<N; i++) {
+				if(val > arr[i][1]) {
+					val = arr[i][1];
+					cnt++;
 				}
 			}
 			
-			System.out.println(N-cnt);
+			System.out.println(cnt);
 		}
 		
 		
