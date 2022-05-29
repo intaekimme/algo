@@ -10,7 +10,7 @@ import java.util.StringTokenizer;
  */
 
 
-public class Main_BOJ_12865_평범한배낭_G1_156ms {
+public class Main_BOJ_12865_평범한배낭_G5_156ms {
 	
 	private static int N, K;
 	private static int[] w, v;
