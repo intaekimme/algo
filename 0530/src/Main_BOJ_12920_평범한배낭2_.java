@@ -16,7 +16,6 @@ public class Main_BOJ_12920_평범한배낭2_ {
 		N = Integer.parseInt(st.nextToken());
 		M = Integer.parseInt(st.nextToken());
 		
-//		ArrayList<int[]> D = new ArrayList<int[]>();
 		
 		ArrayList<Integer> wx = new ArrayList<Integer>();
 		ArrayList<Integer> vx = new ArrayList<Integer>();
@@ -26,41 +25,30 @@ public class Main_BOJ_12920_평범한배낭2_ {
 		for(int i=0; i<N; i++) {
 			st = new StringTokenizer(br.readLine());
 			
+//			V : 무게, C : 가치, K : 물건 갯수
 			V = Integer.parseInt(st.nextToken());
 			C = Integer.parseInt(st.nextToken());
 			K = Integer.parseInt(st.nextToken());
 			
 //			핵심 알고리즘, 질문 참조
+//			k개를 1,2,4,8개로... 부분 부분으로 나눈다.
+//			예를들면 k=7이면 1,2,4로 나눈다.
 			for(int j=1; K>0; j<<=1) {
 				int ix = Math.min(j, K);
-//				D.add(new int[] {V * ix, C * ix});
 				wx.add(V * ix);
 				vx.add(C * ix);
 				K -= ix;
 			}
 		}
-//		for(int i=0; i<D.size(); i++) {
-//			int[] tmp = D.get(i);
-//			for(int j=0; j<tmp.length; j++) {
-//				System.out.print(tmp[j]+ " ");
-//			}
-//			System.out.println();
-//		}
+
 		Integer[] w = new Integer[wx.size()];
 		Integer[] v = new Integer[vx.size()];
 		wx.toArray(w);
 		vx.toArray(v);
+
 		
-//		for (Integer integer : w) {
-//			System.out.print(integer+" ");
-//		}
-//		System.out.println();
-//		for (Integer integer : v) {
-//			System.out.print(integer+" ");
-//		}
-		
-//		System.out.println("\n-------------------");
-//		BOJ_12865_평범한배낭_G5 알고리즘을 문제에 맞게 변형
+//		BOJ_12865_평범한배낭_G5 knapsack 알고리즘 적용
+//		dp 배열 크기 및 반목문 인자 문제에 맞게 수정 
 		dp = new int[w.length+1][M+1];
 		for(int i=1; i<w.length; i++) {
 			for(int j=1; j<=M; j++) {
@@ -70,12 +58,7 @@ public class Main_BOJ_12920_평범한배낭2_ {
 				}
 			}
 		}
-//		for(int i=0; i<w.length; i++) {
-//			for(int j=0; j<=M; j++) {
-//				System.out.print(dp[i][j]+" ");
-//			}
-//			System.out.println();
-//		}
+
 		System.out.println(dp[w.length-1][M]);
 	}
 
