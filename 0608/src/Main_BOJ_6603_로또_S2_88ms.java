@@ -4,6 +4,12 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
+/**
+ * 재귀 - 백트랙킹 문제
+ * @author kit938639
+ *
+ */
+
 public class Main_BOJ_6603_로또_S2_88ms {
 
 	private static int N;
