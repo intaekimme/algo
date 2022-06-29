@@ -9,35 +9,33 @@ public class Main_BOJ_1715_카드정렬하기_G4 {
 
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		N = Integer.parseInt(br.readLine());
 		
-		PriorityQueue<Integer> pq = new PriorityQueue<Integer>();
+		N = Integer.parseInt(br.readLine());
+		PriorityQueue<Integer> pq = new PriorityQueue<Integer>(N);
+		
 		for(int i=0; i<N; i++) {
 			pq.add(Integer.parseInt(br.readLine()));
 		}
 		
 		int res = 0;
-		if(N <= 2) {
-			while(!pq.isEmpty()) {
-				res += pq.poll();
+		int tmp = 0;
+		int cnt = 0;
+		while(true) {
+			if(pq.isEmpty()) {
+				res += tmp;
+				break;
 			}
-			System.out.println(res);
-		}else {
-			int check = 0;
-			while(!pq.isEmpty()) {
-				int val = pq.poll();
-				++check;
-				if(check==2) {
-					res += val;
-					res += res;
-					check=0;
-				}else {
-					res += val;
-				}
+			if(cnt%2 == 0 && cnt!=0) {
+				res += tmp;
+				pq.add(tmp);
+				tmp=0; cnt=0;
+				continue;
 			}
-			System.out.println(res);
+			tmp += pq.poll();
+			cnt++;
 		}
 		
+		System.out.println(res);
 	}
 
 }
