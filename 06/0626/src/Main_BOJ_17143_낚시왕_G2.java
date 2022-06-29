@@ -6,6 +6,11 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
+/**
+ * 상어의 움직임에서 애먹음
+ * @author kit938639
+ *
+ */
 public class Main_BOJ_17143_낚시왕_G2 {
 	
 	static class Shark{
@@ -129,35 +134,26 @@ public class Main_BOJ_17143_낚시왕_G2 {
 			int nr = r + dr[d];
 			int nc = c + dc[d];
 			
-			if(nr<1 || nr>R) {
-				if(d==1) {
+			if(nr<1 || nr>R || nc<1 || nc>C) {
+				r -= dr[d];
+				c -= dc[d];
+				switch (d) {
+				case 1:
 					d=2;
-					nr = r + dr[d];
-					nc = c + dc[d];
-					continue;
-				}
-				if(d==2) {
+					break;
+				case 2:
 					d=1;
-					nr = r + dr[d];
-					nc = c + dc[d];		
-					continue;
-				}
-			}
-			if(nc<1 || nc>C) {
-				if(d==3) {
+					break;
+				case 3:
 					d=4;
-					nr = r + dr[d];
-					nc = c + dc[d];
-					continue;
-				}
-				if(d==4) {
+					break;
+				case 4:
 					d=3;
-					nr = r + dr[d];
-					nc = c + dc[d];
-					continue;
-				}				
+					break;
+				}
+			}else {
+				r = nr; c = nc;				
 			}
-			r = nr; c = nc;
 		}	//	end of for
 		
 		return new Shark(r,c,s,d,z);
