@@ -18,21 +18,11 @@ public class Main_BOJ_1715_카드정렬하기_G4 {
 		}
 		
 		int res = 0;
-		int tmp = 0;
-		int cnt = 0;
-		while(true) {
-			if(pq.isEmpty()) {
-				res += tmp;
-				break;
-			}
-			if(cnt%2 == 0 && cnt!=0) {
-				res += tmp;
-				pq.add(tmp);
-				tmp=0; cnt=0;
-				continue;
-			}
-			tmp += pq.poll();
-			cnt++;
+		while(pq.size()>1) {
+			int a = pq.poll();
+			int b = pq.poll();
+			res += a+b;
+			pq.add(a+b);
 		}
 		
 		System.out.println(res);
