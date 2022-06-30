@@ -11,7 +11,7 @@ import java.util.StringTokenizer;
  * @author kit938639
  *
  */
-public class Main_BOJ_17143_낚시왕_G2 {
+public class Main_BOJ_17143_낚시왕_G2_608ms {
 	
 	static class Shark{
 		int r;

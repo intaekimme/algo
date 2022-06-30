@@ -3,7 +3,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.PriorityQueue;
 
-public class Main_BOJ_1715_카드정렬하기_G4 {
+public class Main_BOJ_1715_카드정렬하기_G4_336ms {
 
 	private static int N;
 

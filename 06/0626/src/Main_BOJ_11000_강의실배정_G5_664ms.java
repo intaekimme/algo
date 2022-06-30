@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.PriorityQueue;
 import java.util.StringTokenizer;
 
-public class Main_BOJ_11000_강의실배정_G5 {
+public class Main_BOJ_11000_강의실배정_G5_664ms {
 
 	static class Lecture implements Comparable<Lecture>{
 		int s;
