@@ -1,14 +1,14 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.LinkedList;
-import java.util.Queue;
 import java.util.StringTokenizer;
 
 /**
- * 라운드를 돌며 임한수와 김지민이 가지는 수 중 큰 수가 짝수이고 두 수의 차가 1이면 이번 라운드에서 만난다.
- * 다음 라운드에서 새로운 순서를 줄 때는 이번 라운드 순서에 1을 더하고 2로 나눠주면 된다.
- * @author kit938639
+ * 
+ * 참가자 번호를 0부터 시작하게 1씩 뺀다음 xor 연산함
+ * 그 결과를 1씩 오른쪽으로 쉬프트하여 0이 될 때까지 ++
+ * 대진표의 제일 위 노드부터 0 1을 넣는다고 생각하면 이해 가능
+ * (문제가 애초에 tree처럼 생겼기 때문에 bitwise operation으로 풀 수 있을 확률이 높음) ??
  *
  */
 public class Main_BOJ_1075_토너먼트_S3 {
@@ -25,19 +25,17 @@ public class Main_BOJ_1075_토너먼트_S3 {
 		jimin = Integer.parseInt(st.nextToken());
 		hansu = Integer.parseInt(st.nextToken());
 		
-		int cnt = 1;
-		
+		int xor_result = (jimin-1) ^ (hansu-1);
+		int ans = 0;
 		while(true) {
-			if(Math.abs(jimin - hansu) == 1 && Math.max(jimin, hansu)%2 == 0) {
-				break;
+			if(xor_result>=1) {
+				ans++;
+				xor_result >>= 1;
 			}else {
-				jimin = (jimin + 1) / 2;
-				hansu = (hansu + 1) / 2;
-				cnt++;
+				break;
 			}
 		}
-		
-		System.out.println(cnt);
+		System.out.println(ans);
 	}
 
 }
